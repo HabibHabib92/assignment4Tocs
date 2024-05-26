@@ -1,12 +1,13 @@
 #!/bin/bash
 
-echo "Current directory: $(pwd)"
-ls -l
-ls -l env/bin  # Check if env/bin directory exists
+# Change directory to the workspace directory
+cd /var/lib/jenkins/workspace/assign_4/
 
-venvname="env"
+# Print current directory for debugging
+echo "Current directory: $(pwd)"
 
 # Check if virtual environment exists, and create it if not
+venvname="env"
 if [ ! -d "$venvname" ]; then
     echo "Creating virtual environment '$venvname'..."
     python3 -m venv "$venvname"
