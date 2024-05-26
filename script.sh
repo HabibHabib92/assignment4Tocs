@@ -11,7 +11,8 @@ fi
 
 # Activate the virtual environment
 echo "Activating virtual environment '$venvname'..."
-. "$venvname/bin/activate"
+source "$venvname/bin/activate"
+ls "$venvname/bin/"
 echo "Virtual environment '$venvname' activated."
 
 # Install Flask
