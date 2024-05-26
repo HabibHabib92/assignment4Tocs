@@ -1,3 +1,5 @@
+#!/bin/bash
+
 venvname="env"
 
 if [ ! -d "$venvname" ]; then
