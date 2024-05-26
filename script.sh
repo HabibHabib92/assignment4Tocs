@@ -1,23 +1,10 @@
-#!/bin/bash
+venvname="venv"
 
-venvname="env"
-
-# Check if virtual environment exists, and create it if not
 if [ ! -d "$venvname" ]; then
-    echo "Creating virtual environment '$venvname'..."
-    python3 -m venv "$venvname"
-    echo "Virtual environment '$venvname' created."
+    python -m venv "$venvname"
 fi
 
-# List files in the bin directory
-echo "Files in '$venvname/bin' directory:"
-ls "$venvname/bin"
+source "$venvname/bin/activate"
+pip install flask gunicorn
 
-# Install Flask using pip within the virtual environment
-echo "Installing Flask..."
-"$venvname/bin/pip" install flask
-echo "Flask installed successfully."
-
-# Run the application using python within the virtual environment
-echo "Running the application..."
-"$venvname/bin/python" app.py
+gunicorn -w 4 -b 0.0.0.0:5000 --reload app:app
