@@ -9,20 +9,15 @@ if [ ! -d "$venvname" ]; then
     echo "Virtual environment '$venvname' created."
 fi
 
-# Activate the virtual environment
-echo "Activating virtual environment '$venvname'..."
-source "$venvname/bin/activate"
-echo "Virtual environment '$venvname' activated."
-
 # List files in the bin directory
 echo "Files in '$venvname/bin' directory:"
 ls "$venvname/bin"
 
-# Install Flask
+# Install Flask using pip within the virtual environment
 echo "Installing Flask..."
-pip install flask
+"$venvname/bin/pip" install flask
 echo "Flask installed successfully."
 
-# Run the application
+# Run the application using python within the virtual environment
 echo "Running the application..."
-python app.py
+"$venvname/bin/python" app.py
