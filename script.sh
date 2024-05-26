@@ -12,8 +12,11 @@ fi
 # Activate the virtual environment
 echo "Activating virtual environment '$venvname'..."
 source "$venvname/bin/activate"
-ls "$venvname/bin/"
 echo "Virtual environment '$venvname' activated."
+
+# List files in the bin directory
+echo "Files in '$venvname/bin' directory:"
+ls "$venvname/bin"
 
 # Install Flask
 echo "Installing Flask..."
