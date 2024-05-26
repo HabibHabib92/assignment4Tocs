@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Change directory to the workspace directory
-cd /var/lib/jenkins/workspace/assign_4/
-
-# Print current directory for debugging
-echo "Current directory: $(pwd)"
-
 # Check if virtual environment exists, and create it if not
 venvname="env"
 if [ ! -d "$venvname" ]; then
