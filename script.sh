@@ -1,7 +1,7 @@
 venvname="venv"
 
 if [ ! -d "$venvname" ]; then
-    python -m venv "$venvname"
+    python3 -m venv "$venvname"
 fi
 
 source "$venvname/bin/activate"
