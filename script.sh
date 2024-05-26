@@ -5,6 +5,6 @@ if [ ! -d "$venvname" ]; then
 fi
 
 source "$venvname/bin/activate"
-pip install flask gunicorn
+pip install flask 
 
-gunicorn -w 4 -b 0.0.0.0:5000 --reload app:app
+python app.py
