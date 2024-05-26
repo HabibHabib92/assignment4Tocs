@@ -7,4 +7,5 @@ fi
 . "$venvname/bin/activate"
 pip install flask 
 
-nohup python app.py &
+nohup python app.py > output.log 2>&1 &
+
